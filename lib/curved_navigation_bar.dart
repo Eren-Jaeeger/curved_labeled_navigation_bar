@@ -150,8 +150,7 @@ class CurvedNavigationBarState extends State<CurvedNavigationBar>
                 ? Alignment.bottomLeft
                 : Alignment.bottomRight,
             child: Container(
-              color: widget.buttonBackgroundColor ?? widget.color,
-              shape: CircleBorder(side: BorderSide(color: widget.color)),
+              color: widget.backgroundColor,
               width: maxWidth,
               child: ClipRect(
                 clipper: NavCustomClipper(
@@ -175,7 +174,8 @@ class CurvedNavigationBarState extends State<CurvedNavigationBar>
                           offset: Offset(0, (_buttonHide - 1) * 80),
                           child: Material(
                             color: widget.buttonBackgroundColor ?? widget.color,
-                            type: MaterialType.circle,
+                            shape: CircleBorder(
+                                side: BorderSide(color: widget.color)),
                             child: Padding(
                               padding: EdgeInsets.all(widget.iconPadding),
                               child: _icon,
